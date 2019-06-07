@@ -93,6 +93,10 @@ def executarAcao(acao, dados):
                 print('foi ordenada em', tempo_execucao, 'segundos.');
                 print('');
                 pausar();
+                limparTela();
+                print(lista_ordenada);
+                print('');
+                pausar();
                 break;
             elif (opcao == 4):
                 break;
