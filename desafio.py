@@ -47,9 +47,10 @@ def pesquisaSalarios(lista_dicionarios, num_funcionarios):
 def criarListaDesordenada(dicionarios):
     lista = [];
     for index in range(10000):
-        lista.append(dicionarios[index]['total_líquido']);
+        salario_atual = dicionarios[index]['remuneracao_do_mês'].replace(',', '.');
+        lista.append(float(salario_atual));
     return lista;
-################################################### Main:
+###################################################
 
 dicionarios = criarDicionario();
 lista_desordenada = criarListaDesordenada(dicionarios);
