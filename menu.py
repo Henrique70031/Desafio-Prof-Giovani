@@ -30,5 +30,5 @@ menu_dict = {
 # printa um menu de opções
 def printMenu(menu: str):
     if (menu in menu_dict.keys()):
-        for opcao in sorted(menu_dict[menu].values()):
-            print(opcao)
+        for key in sorted(menu_dict[menu].keys()):
+            print(menu_dict[menu][key])
