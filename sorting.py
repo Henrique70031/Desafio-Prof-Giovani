@@ -1,3 +1,5 @@
+from time import perf_counter
+
 def bubbleSort(lista):
     lista_ordenada = lista.copy();
     tamanho = len(lista_ordenada)
@@ -60,3 +62,17 @@ def merge(esquerda, direita):
     if (len(direita) > 0):
         lista_ordenada.extend(direita);
     return lista_ordenada;
+
+def medirTempoOrdenacao(ordenador, lista_desordenada):
+    inicio = perf_counter()
+    resultado = ordenador(lista_desordenada)
+    termino = perf_counter()
+    return resultado, termino - inicio
+
+def ordenarUsando(sort, lista_desordenada):
+    if (sort == 1):
+        return medirTempoOrdenacao(bubbleSort, lista_desordenada)
+    elif (sort == 2):
+        return medirTempoOrdenacao(selectionSort, lista_desordenada)
+    else:
+        return medirTempoOrdenacao(mergeSort, lista_desordenada)
