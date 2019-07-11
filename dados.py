@@ -1,6 +1,17 @@
 from menu import printMenu
 from utils import limparTela, pausar
 
+class Contador:
+    def __init__(self, inicial=0):
+        self.__contagem = inicial
+
+    def __next__(self):
+        self.__contagem += 1
+        return __contagem
+
+    def resultado(self):
+        return self.__contagem
+
 def carregarDados(contador_funcionarios):
     arquivo = open("remuneracao.txt", "r")
     lista_dic_funcionarios = []
